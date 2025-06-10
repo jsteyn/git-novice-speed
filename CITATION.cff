@@ -5,7 +5,7 @@
 # ensuring that the author list and other fields remain accurate.
 
 cff-version: 1.2.0
-title: FIXME
+title: Intro to Git & GitHub (Speedrun edition)
 message: >-
   Please cite this lesson using the information in this file
   when you refer to it in publications, and/or if you
@@ -16,7 +16,7 @@ authors:
   - given-names: FIXME
     family-names: FIXME
 abstract: >-
-  FIXME Replace this with a short abstract describing the
-  lesson, e.g. its target audience and main intended
-  learning objectives.
+  This Git lesson combines and modifies content from the Software Carpentry Version Control with Git lesson, the Carpentries Incubator Version Control with Git lesson that incorporates branches and PRs, and the Library Carpentry Introduction to Git lesson.
+  The actual delivered content is designed to be taught in 90 minutes, but requires learners to complete set-up and installation steps prior to the workshop.
+  The workshop prioritizes the typical developer workflow, which is why it is taught in VS Code with a bash terminal, and starts with the creation of the repo on GitHub rather than the local computer. Terminal commands are used first, before the VS Code Source Control pane is introduced. Learners should be encouraged to use the workflow they are most comfortable with.
 license: CC-BY-4.0
