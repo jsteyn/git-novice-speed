@@ -35,9 +35,11 @@ $ pwd
 
 Let's create a file called `earth.txt` to start recording the events taking place on the planet Earth.
 
-Make sure you have the Explorer pane open in VS Code, and **click the "New File" button**. Name the file `earth.txt`. 
+Open Notepad++. Click on `File` in the menu at the top of the Notepad++ window. Select `Open Folder as Workspace`. Find the directory that you cloned the multiverse repository to and click `Open`
 
-Type the text below into the `earth.txt` file:
+By default an empty new file is created called `new 1`. Type the text below into the editor:
+
+
 
 ```output
 Thor defends New Asgard from invaders.
@@ -46,11 +48,11 @@ Thor defends New Asgard from invaders.
 
 Make sure to end the file with a newline!
 
-Save the file.
+Save the file as `earth.txt` by clicking on `File` in the top menu and then `Save as. Navigate to the `multiverse` directory that we cloned our repository to and enter `earth.txt` in the `File name` text box. Press `Save`.
 
 ## Track Changes to the File
 
-If we check the status of our project again, Git tells us that it's noticed the new file:
+You can switch between the bash terminal and Notepad using <kbd>Alt-Tab</kbd>. If we check the status of our project again, Git tells us that it's noticed the new file:
 
 ```bash
 $ git status
