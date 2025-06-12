@@ -38,12 +38,6 @@ It is strongly recommended that you set up 2FA for your GitHub account, and to u
 
 ## Software Installations
 
-### Visual Studio Code
-
-[Download and install VS Code](https://code.visualstudio.com/download). 
-
-If you are new to using VS Code, you can review this [Getting Started](https://code.visualstudio.com/docs/getstarted/getting-started) guide.
-
 ### Git
 
 You must have Git installed on your local computer. Typically, Mac and Linux computers come pre-installed with git, while Windows users must install [GitBash](https://gitforwindows.org) (Git for Windows). However, you should verify that Git is installed on your computer.
@@ -64,14 +58,9 @@ You should have a Bash terminal. If you are on a Windows, you will have a Bash t
 
 Rather than using a seperate command line application, you will be using the Terminal in VS Code. To learn more about using the Terminal in VS Code, refer to [these docs](https://code.visualstudio.com/docs/terminal/basics).
 
-## Connect VS Code to GitHub
-
-Please refer to [these instructions](https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_set-up-git-in-vs-code) to sign in to GitHub from VS Code.
-
-Optionally, you can install the GitHub extension, and follow [these instructions](https://code.visualstudio.com/docs/sourcecontrol/github) to sign into GitHub.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- GitHub, VS Code, bash, and git are needed for this lesson
+- GitHub, bash, and git are needed for this lesson
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
