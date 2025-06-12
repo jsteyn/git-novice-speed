@@ -46,7 +46,15 @@ Thor defends New Asgard from invaders.
 
 Make sure to end the file with a newline!
 
-Save the file as `earth.txt` by clicking on `File` in the top menu and then `Save as`. Navigate to the `multiverse` directory that we cloned our repository to and enter `earth.txt` in the `File name` text box. Click `Save`.
+![Text entered into new notepad++ document](fig/notepad_1.png)
+
+Save the file as `earth.txt` by clicking on `File` in the top menu and then `Save as`. 
+
+![Select Save as from menu](fig/notepad_2.png)
+
+Navigate to the `multiverse` directory that we cloned our repository to and enter `earth.txt` in the `File name` text box. Click `Save`.
+
+![Save document as earth.txt](fig/notepad_3.png)
 
 ## Track Changes to the File
 
