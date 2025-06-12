@@ -674,7 +674,7 @@ any links that you are not going to use.
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>When the workshop begins, you should be sharing your screen, and
 instruct the learners to make sure their setup looks like yours:</p>
@@ -876,7 +876,7 @@ any links that you are not going to use.
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>When the workshop begins, you should be sharing your screen, and
 instruct the learners to make sure their setup looks like yours:</p>
@@ -906,7 +906,7 @@ repo to your local computer.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
   <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
 <div class="accordion-body">
 <p>The documentation for creating a new repo on GitHub is available <a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository" class="external-link">here</a></p>
 <p>If you have taught this lesson before, make sure that you have
@@ -1225,7 +1225,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-4_track-changes"><p>Content from <a href="4_track-changes.html">Tracking Changes</a></p>
 <hr>
-<p>Last updated on 2025-06-09 |
+<p>Last updated on 2025-06-12 |
 
         <a href="https://github.com/jsteyn/git-novice-speedrun/edit/main/episodes/4_track-changes.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -1287,10 +1287,12 @@ the <code>multiverse</code> directory.</p>
 </div>
 <p>Let’s create a file called <code>earth.txt</code> to start recording
 the events taking place on the planet Earth.</p>
-<p>Make sure you have the Explorer pane open in VS Code, and
-<strong>click the “New File” button</strong>. Name the file
-<code>earth.txt</code>.</p>
-<p>Type the text below into the <code>earth.txt</code> file:</p>
+<p>Open Notepad++. Click on <code>File</code> in the menu at the top of
+the Notepad++ window. Select <code>Open Folder as Workspace</code>. Find
+the directory that you cloned the multiverse repository to and click
+<code>Open</code></p>
+<p>By default an empty new file is created called <code>new 1</code>.
+Type the text below into the editor:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1298,12 +1300,16 @@ the events taking place on the planet Earth.</p>
 </code></pre>
 </div>
 <p>Make sure to end the file with a newline!</p>
-<p>Save the file.</p>
+<p>Save the file as <code>earth.txt</code> by clicking on
+<code>File</code> in the top menu and then
+<code>Save as. Navigate to the</code>multiverse<code>directory that we cloned our repository to and enter</code>earth.txt<code>in the</code>File
+name<code>text box. Press</code>Save`.</p>
 </section><section><h2 class="section-heading" id="track-changes-to-the-file">Track Changes to the File<a class="anchor" aria-label="anchor" href="#track-changes-to-the-file"></a>
 </h2>
 <hr class="half-width">
-<p>If we check the status of our project again, Git tells us that it’s
-noticed the new file:</p>
+<p>You can switch between the bash terminal and Notepad using
+<kbd>Alt-Tab</kbd>. If we check the status of our project again, Git
+tells us that it’s noticed the new file:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
