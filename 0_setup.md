@@ -20,9 +20,9 @@ exercises: 0
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-If you are participating in this workshop remotely (e.g. over Zoom), it is highly recommended that you use two screens: 1 screen with the remote meeting, to see the instructor sharing their screen, and 1 screen with your applications. You will need to have VS Code and a web browser open to GitHub.com in order to follow along.
+If you are participating in this workshop remotely (e.g. over Zoom), it is highly recommended that you use two screens: 1 screen with the remote meeting, to see the instructor sharing their screen, and 1 screen with your applications. You will need to have an editor (such as Notepad++) and a web browser open to GitHub.com in order to follow along. Notepad++ is a free and open source editor. On Mac and Linux there are usually various editors available by default.
 
-![Example Screen setup](fig/learner-setup-screenshot.png)
+![Notepad++ Screenshot](https://notepad-plus-plus.org/assets/images/notepad4ever.png))
 
 :::::::::::::::::::::::::::::::::::::
 
