@@ -457,6 +457,105 @@ you prefer, you can use a similar terminal like Zsh.</p>
 using the Terminal in VS Code. To learn more about using the Terminal in
 VS Code, refer to <a href="https://code.visualstudio.com/docs/terminal/basics" class="external-link">these
 docs</a>.</p>
+</div>
+<div class="section level3">
+<h3 id="create-an-ssh-keypair">Create an SSH keypair<a class="anchor" aria-label="anchor" href="#create-an-ssh-keypair"></a></h3>
+<p>To link our local git repository to our GitHub account we will need
+to generate an ssh keypair. We do this in the bash terminal. At the
+command prompt, enter the following command:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> ssh-keygen <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"youremail@yourinstitution.ext"</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/users/yourname/.ssh/id_ed25519):</code></pre>
+</div>
+<p>We want to use the default file, so just pres <kbd>Enter</kbd>.</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Created directory `/c/users/yourname/.ssh`.
+Enter passphrase (empty for no passphrase):</code></pre>
+</div>
+<p>For now we will not using a passphrase, because you will have to
+enter it every time you push to git. Just press <kbd>Enter<kbd> for no
+passphrase).</kbd></kbd></p>
+<p>fter entering the same passphrase a second time, we receive the
+confirmation</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Your identification has been saved in /c/users/yourname/.ssh/id_ed25519
+Your public key has been saved in /c/users/yourname/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o youremail@yourinstitution.ext
+The key's randomart image is:
++--[ED25519 256]--+
+|^B== o.          |
+|%*=.*.+          |
+|+=.E =.+         |
+| .=.+.o..        |
+|....  . S        |
+|.+ o             |
+|+ =              |
+|.o.o             |
+|oo+.             |
++----[SHA256]-----+</code></pre>
+</div>
+<p>The “identification” is actually the private key. You should never
+share it. The public key is appropriately named. The “key fingerprint”
+is a shorter version of a public key.</p>
+<p>Now that we have generated the SSH keys, we will find the SSH files
+when we check.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-al</span> ~/.ssh</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ./
+drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ../
+-rw-r--r-- 1 Alfredo   197121 419 Jul 16 14:48 id_ed25519
+-rw-r--r-- 1 Alfredo   197121 106 Jul 16 14:48 id_ed25519.pub</code></pre>
+</div>
+<p>First, we need to copy the public key. Be sure to include the
+<code>.pub</code> at the end, otherwise you’re looking at the private
+key.</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI a.linguini@ratatouille.fr</code></pre>
+</div>
+<p>Now, going to GitHub.com, click on your profile icon in the top right
+corner to get the drop-down menu. Click “Settings”, then on the settings
+page, click “SSH and GPG keys”, on the left side “Access” menu. Click
+the “New SSH key” button on the right side. Now, you can add the title,
+paste your SSH key into the field, and click the “Add SSH key” to
+complete the setup.</p>
+<p>Now that we’ve set that up, let’s check our authentication again from
+the command line.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">$</span> ssh <span class="at">-T</span> git@github.com</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Hi YourName! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
+</div>
+<p>Good! This output confirms that the SSH key works as intended.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -464,7 +563,7 @@ docs</a>.</p>
 <div class="callout-inner">
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
-<ul><li>GitHub, bash, and git are needed for this lesson</li>
+<ul><li>GitHub, bash, git and ssh key pairs are needed for this lesson</li>
 </ul></div>
 </div>
 </div>
