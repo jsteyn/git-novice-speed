@@ -35,9 +35,7 @@ $ pwd
 
 Let's create a file called `earth.txt` to start recording the events taking place on the planet Earth.
 
-Open Notepad++. Click on `File` in the menu at the top of the Notepad++ window. Select `Open Folder as Workspace`. Find the directory that you cloned the multiverse repository to and click `Open`
-
-By default an empty new file is created called `new 1`. Type the text below into the editor:
+Open Notepad++. By default an empty new file is created called `new 1`. Type the text below into the editor:
 
 
 
