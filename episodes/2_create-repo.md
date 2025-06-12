@@ -101,6 +101,5 @@ You should now have your empty `multiverse` repo open, with a Bash terminal open
 
 - Create a new repository on GitHub
 - Clone the repository to your local computer
-- Open the terminal in VS Code
-
+- Opening a bash terminal
 ::::::::::::::::::::::::::::::::::::::::::::::::::
