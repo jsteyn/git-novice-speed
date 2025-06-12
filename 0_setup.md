@@ -76,7 +76,7 @@ We want to use the default file, so just pres <kbd>Enter</kbd>.
 Created directory `/c/users/yourname/.ssh`.
 Enter passphrase (empty for no passphrase):
 ```
-For now we will not using a passphrase, because you will have to enter it every time you push to git. Just press <kbd>Enter<kbd> for no passphrase).
+For now we will not using a passphrase, because you will have to enter it every time you push to git. (Just press <kbd>Enter</kbd> for no passphrase).
 
 fter entering the same passphrase a second time, we receive the confirmation
 
