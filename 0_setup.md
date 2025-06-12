@@ -58,9 +58,91 @@ You should have a Bash terminal. If you are on a Windows, you will have a Bash t
 
 Rather than using a seperate command line application, you will be using the Terminal in VS Code. To learn more about using the Terminal in VS Code, refer to [these docs](https://code.visualstudio.com/docs/terminal/basics).
 
+### Create an SSH keypair
+
+To link our local git repository to our GitHub account we will need to generate an ssh keypair. We do this in the bash terminal. At the command prompt, enter the following command:
+
+```bash
+$ ssh-keygen -t ed25519 -C "youremail@yourinstitution.ext"
+```
+```output
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/users/yourname/.ssh/id_ed25519):
+```
+
+We want to use the default file, so just pres <kbd>Enter</kbd>.
+
+```output
+Created directory `/c/users/yourname/.ssh`.
+Enter passphrase (empty for no passphrase):
+```
+For now we will not using a passphrase, because you will have to enter it every time you push to git. Just press <kbd>Enter<kbd> for no passphrase).
+
+fter entering the same passphrase a second time, we receive the confirmation
+
+```output
+Your identification has been saved in /c/users/yourname/.ssh/id_ed25519
+Your public key has been saved in /c/users/yourname/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:SMSPIStNyA00KPxuYu94KpZgRAYjgt9g4BA4kFy3g1o youremail@yourinstitution.ext
+The key's randomart image is:
++--[ED25519 256]--+
+|^B== o.          |
+|%*=.*.+          |
+|+=.E =.+         |
+| .=.+.o..        |
+|....  . S        |
+|.+ o             |
+|+ =              |
+|.o.o             |
+|oo+.             |
++----[SHA256]-----+
+```
+
+The "identification" is actually the private key. You should never share it.  The public key is appropriately named.  The "key fingerprint"
+is a shorter version of a public key.
+
+Now that we have generated the SSH keys, we will find the SSH files when we check.
+
+```bash
+ls -al ~/.ssh
+```
+
+```output
+drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ./
+drwxr-xr-x 1 Alfredo   197121   0 Jul 16 14:48 ../
+-rw-r--r-- 1 Alfredo   197121 419 Jul 16 14:48 id_ed25519
+-rw-r--r-- 1 Alfredo   197121 106 Jul 16 14:48 id_ed25519.pub
+```
+
+First, we need to copy the public key.  Be sure to include the `.pub` at the end, otherwise you're looking at the private key.
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+```output
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmRA3d51X0uu9wXek559gfn6UFNF69yZjChyBIU2qKI a.linguini@ratatouille.fr
+```
+
+Now, going to GitHub.com, click on your profile icon in the top right corner to get the drop-down menu.  Click "Settings", then on the
+settings page, click "SSH and GPG keys", on the left side "Access" menu. Click the "New SSH key" button on the right side. Now,
+you can add the title, paste your SSH key into the field, and click the "Add SSH key" to complete the setup.
+
+Now that we've set that up, let's check our authentication again from the command line.
+
+```bash
+$ ssh -T git@github.com
+```
+
+```output
+Hi YourName! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+Good! This output confirms that the SSH key works as intended.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- GitHub, bash, and git are needed for this lesson
+- GitHub, bash, git and ssh key pairs are needed for this lesson
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
